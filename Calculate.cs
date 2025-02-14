@@ -35,5 +35,26 @@ namespace _13._02
         {
             this.field2 = field2;
         }
+        /// <summary>
+        /// Функция формирования строки с информацией об объекте
+        /// </summary>
+        //public void Output()
+        //{
+        //    Console.WriteLine($"field1 = {field1}, field2 = {field2}");
+        //}
+        public override string ToString()
+        {
+            return $"field1 = { field1}, field2 = { field2}";
+        }
+        /// <summary>
+        ///  Функция вычисления квадратного поля
+        /// </summary>
+        /// <returns>field1,field2</returns>
+        public double CalculateSquareRoot()
+        {
+            return Math.Sqrt(field1*field2);
+        }
+
+
     }
 }
