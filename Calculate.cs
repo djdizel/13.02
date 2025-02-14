@@ -12,8 +12,28 @@ namespace _13._02
         /// <summary>
         /// Объявление полей
         /// </summary>
-        public double field1;
-        public double field2;
+        private double field1;
+        private double field2;
+
+        /// <summary>
+        /// Инкапсуляция полей
+        /// </summary>
+        public double Field1 { get => field1; 
+            set { 
+                if (value < 0) 
+                    throw new ArgumentException("Error");
+                    field1 = value;
+            }
+        }
+        public double Field2 { get => field2;
+            set
+            {
+                if (value < 0)
+                    throw new ArgumentException("Error");
+                    field2 = value;
+            }
+        }
+
         /// <summary>
         /// Конструктор без параметров
         /// </summary>
@@ -24,7 +44,7 @@ namespace _13._02
         /// <param name="field1"></param>
         public Calculate(double field1) 
         { 
-            this.field1 = field1; 
+            this.Field1 = field1; 
         }
         /// <summary>
         ///  Конструктор с 2 параметрами
@@ -33,7 +53,7 @@ namespace _13._02
         /// <param name="field2"></param>
         public Calculate(double field1, double field2):this(field1) 
         {
-            this.field2 = field2;
+            this.Field2 = field2;
         }
         /// <summary>
         /// Функция формирования строки с информацией об объекте
@@ -44,7 +64,7 @@ namespace _13._02
         //}
         public override string ToString()
         {
-            return $"field1 = { field1}, field2 = { field2}";
+            return $"field1 = { Field1}, field2 = { Field2}";
         }
         /// <summary>
         ///  Функция вычисления квадратного поля
@@ -52,9 +72,9 @@ namespace _13._02
         /// <returns>field1,field2</returns>
         public double CalculateSquareRoot()
         {
-            return Math.Sqrt(field1*field2);
+            return Math.Sqrt(Field1*Field2);
         }
 
-
+        
     }
 }

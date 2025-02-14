@@ -14,8 +14,8 @@ namespace _13._02
             //объект с именем calc,конструктор без параметров
             Calculate calc = new Calculate();     
             Console.WriteLine($"{calc.ToString()}\n");
-            calc.field1 = 3;
-            calc.field2 =-10;
+            calc.Field1 = 2;
+            calc.Field2 = 3;
             Console.WriteLine($"{calc.ToString()}\n");
             //конструктор с одним параметрами 
             Calculate calc2 = new Calculate(4);
@@ -24,11 +24,13 @@ namespace _13._02
             Calculate calc3 = new Calculate(2,3);
             Console.WriteLine($"{calc3.ToString()}\n");
             Console.WriteLine($"{calc3.CalculateSquareRoot()}\n");
+            //конструктор с parse
             Console.WriteLine("Введите 1 число");
-            double field1 = double.Parse( Console.ReadLine() );
+            double field1 = double.Parse(Console.ReadLine());
             Console.WriteLine("Введите 2 число");
             double field2 = double.Parse(Console.ReadLine());
-            Console.WriteLine($"{calc3.CalculateSquareRoot()}\n");
+            Calculate calc4 = new Calculate(field1,field2);
+            Console.WriteLine($"{calc4.CalculateSquareRoot()}\n");
             Console.ReadLine();
         }
     }
